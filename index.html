@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CreatorSift — AI Influencer Discovery, Matching &amp; Verified Outreach for Boutique Agencies &amp; SMBs</title>
+  <meta name="description" content="Stop hiring full-time researchers to manually hunt creators. CreatorSift automates YouTube &amp; TikTok influencer discovery, two-stage AI persona vetting, confidence-scored email extraction, and 1-to-1 outreach drafts for boutique agencies and small brands." />
+  <meta name="keywords" content="AI influencer discovery tool, creator sourcing automation, boutique influencer agency software, YouTube TikTok creator matching, verified creator email finder, automated influencer vetting, influencer outreach workflow, micro influencer sourcing SaaS" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="author" content="CreatorSift" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CreatorSift — Automated Creator Discovery &amp; Matching for Boutique Agencies &amp; SMBs" />
+  <meta property="og:description" content="Compress 40 hours of manual influencer hunting into 15 minutes. Two-stage AI vetting, evidence-backed business email confidence scoring, and safe 1-to-1 outreach drafts." />
+  <meta property="og:image" content="assets/og-cover.svg" />
+  <meta property="og:site_name" content="CreatorSift" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CreatorSift — Stop Paying Full-Time Staff to Manually Hunt Creators" />
+  <meta name="twitter:description" content="Automated YouTube &amp; TikTok creator discovery, AI persona scoring (81%+ human agreement), and confidence-scored business email extraction." />
+  <meta name="twitter:image" content="assets/og-cover.svg" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+
+  <!-- Structured Data (Schema.org JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "CreatorSift",
+        "description": "CreatorSift builds automated influencer discovery, AI persona matching, and verified outreach workflow software for boutique marketing agencies and small-to-medium brands."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "CreatorSift",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "AI-powered creator discovery, two-stage hybrid vetting, confidence-scored email extraction, and human-in-the-loop outreach drafting for YouTube and TikTok.",
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "USD",
+          "lowPrice": "29",
+          "highPrice": "179",
+          "offerCount": "3"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does CreatorSift save boutique agencies and small brands from hiring full-time influencer researchers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Traditional creator sourcing requires researchers to manually search YouTube and TikTok, check recent view counts, read video descriptions, hunt for business emails, and copy-paste into spreadsheets. CreatorSift automates discovery, hard metric filtering, AI content-persona scoring, and confidence-rated email extraction—turning a 40-hour manual workflow into a 15-minute human review batch."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How accurate is the two-stage AI creator matching compared to human vetting?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CreatorSift separates objective eligibility gates (subscriber bands, recent median views, upload recency, active status) from qualitative AI persona analysis. Across real production calibration cycles with human reviewers, the hybrid pipeline achieves over 81% human-agreement precision while preserving every reason and video evidence link for your final approval."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does CreatorSift automatically spam creators with bulk emails?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. CreatorSift is built around deliverable, 1-to-1 relationship outreach. It generates personalized outreach drafts referencing specific creator videos and keeps you in control via a draft-only safety model with daily throttling and suppression guards—protecting your agency and client domain reputation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the Confidence-Scored Contact Engine avoid bad or fake emails?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Instead of grabbing the first regex match on a page, CreatorSift cross-checks bio links, channel descriptions, and domain blocklists, assigning High, Medium, or Low confidence ratings with full source evidence chains. Low-confidence or ambiguous addresses are flagged for review rather than pushed blindly into outreach."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which creator platforms does CreatorSift support?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CreatorSift currently supports deep discovery, recent-video engagement analysis, and contact extraction across YouTube and TikTok, with cross-platform identity conflict checking so you never accidentally double-pitch the same creator."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What do I get by joining the Founding Member Waitlist?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Founding Waitlist members lock in 40% off regular monthly subscription rates for life (starting at $29/mo for Solo Brands and $79/mo for Boutique Agencies), get priority onboarding, and can submit their exact niche matching criteria to shape the public release."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="CreatorSift Home">
+        <span class="brand-mark" aria-hidden="true">CS</span>
+        <span class="brand-name">CreatorSift</span>
+        <span class="brand-badge">Early Access</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="#comparison">Why CreatorSift</a>
+        <a href="#workflow">How It Works</a>
+        <a href="#roi">ROI Calculator</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="header-cta">
+        <a href="#waitlist" class="btn btn-primary btn-sm">Join Waitlist</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="pill-tag">
+            <span class="dot"></span>
+            Built for Boutique Agencies, Solo Marketers &amp; Lean DTC Brands
+          </div>
+          <h1>Stop Hiring Full-Time Staff Just to <span class="gradient-text">Find &amp; Match Creators</span>.</h1>
+          <p class="hero-lead">
+            Manual influencer sourcing burns 30–40 hours a week on endless scrolling, broken spreadsheets, and bounced emails.
+            <strong>CreatorSift</strong> automates YouTube &amp; TikTok creator discovery, two-stage AI persona vetting, confidence-scored email extraction, and personalized 1-to-1 outreach drafts—so one operator can deliver agency-grade creator matches in 15 minutes.
+          </p>
+          <div class="hero-actions">
+            <a href="#waitlist" class="btn btn-primary btn-lg">Join Founding Waitlist — Lock 40% Off</a>
+            <a href="#roi" class="btn btn-secondary btn-lg">Calculate Time &amp; Payroll Saved</a>
+          </div>
+          <ul class="hero-metrics" aria-label="Key Performance Benchmarks">
+            <li>
+              <strong>81%+</strong>
+              <span>Human-agreement vetting precision</span>
+            </li>
+            <li>
+              <strong>15 min</strong>
+              <span>To review a curated batch of 60+ creators</span>
+            </li>
+            <li>
+              <strong>0 spam</strong>
+              <span>Evidence-scored emails &amp; draft-only safety</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Interactive Pipeline Preview Card -->
+        <aside class="hero-preview" aria-label="Interactive Pipeline Preview">
+          <div class="preview-window">
+            <div class="preview-topbar">
+              <div class="window-dots" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="preview-title">CreatorSift Workbench · Batch #14 (YouTube + TikTok)</span>
+              <span class="status-pill">Live Match Mode</span>
+            </div>
+
+            <div class="preview-tabs" role="tablist" aria-label="Sample Client Niches">
+              <button type="button" class="preview-tab active" data-sample="pod" role="tab" aria-selected="true">Custom Merch &amp; POD</button>
+              <button type="button" class="preview-tab" data-sample="saas" role="tab" aria-selected="false">B2B SaaS Tools</button>
+              <button type="button" class="preview-tab" data-sample="home" role="tab" aria-selected="false">Home &amp; Craft DTC</button>
+            </div>
+
+            <div class="preview-body" id="preview-cards">
+              <!-- Populated dynamically by assets/app.js, with initial static fallback -->
+              <div class="creator-card">
+                <div class="creator-head">
+                  <div>
+                    <span class="platform-tag yt">YouTube</span>
+                    <strong>Studio Craft &amp; Merch Lab</strong>
+                    <span class="handle">@studiocraftlab · 68.4K subs</span>
+                  </div>
+                  <span class="fit-score high">94% Fit</span>
+                </div>
+                <p class="evidence-line">
+                  <strong>AI Rationale:</strong> Publishes weekly tutorial reviews comparing supplier quality &amp; margins; affiliate links present in 4 of last 6 uploads; median 14.2K views (active 4 days ago).
+                </p>
+                <div class="creator-foot">
+                  <span class="email-badge verified">High Confidence: collab@studiocraftlab.com (Channel + Linktree match)</span>
+                  <span class="draft-status">Draft Ready</span>
+                </div>
+              </div>
+
+              <div class="creator-card">
+                <div class="creator-head">
+                  <div>
+                    <span class="platform-tag tt">TikTok</span>
+                    <strong>Maya Designs Co</strong>
+                    <span class="handle">@mayadesignsco · 41.2K followers</span>
+                  </div>
+                  <span class="fit-score high">89% Fit</span>
+                </div>
+                <p class="evidence-line">
+                  <strong>AI Rationale:</strong> Original art merchandise workflow videos; 8 non-pinned recent clips averaging 6,800 views; zero agency conflict detected.
+                </p>
+                <div class="creator-foot">
+                  <span class="email-badge verified">High Confidence: maya@mayadesignsco.studio (Bio literal match)</span>
+                  <span class="draft-status">Draft Ready</span>
+                </div>
+              </div>
+
+              <div class="creator-card muted">
+                <div class="creator-head">
+                  <div>
+                    <span class="platform-tag yt">YouTube</span>
+                    <strong>MegaWholesale Machinery</strong>
+                    <span class="handle">@megawholesale · 120K subs</span>
+                  </div>
+                  <span class="fit-score rejected">Rejected · Gate 1</span>
+                </div>
+                <p class="evidence-line">
+                  <strong>Rule Engine:</strong> Excluded automatically — B2B industrial equipment reseller, not an independent creator fit. Saved 4 mins of manual review.
+                </p>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Pain vs Solution Comparison -->
+    <section id="comparison" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">The Agency &amp; Small Brand Bottleneck</span>
+          <h2>Why Manual Creator Matching Breaks Small Teams</h2>
+          <p>
+            Most small agencies and lean ecommerce teams either burn founder hours hunting creators on spreadsheets—or hire a full-time junior coordinator just to copy-paste channel links. CreatorSift replaces the grunt work without sacrificing editorial judgment.
+          </p>
+        </div>
+
+        <div class="comparison-grid">
+          <div class="compare-card before">
+            <div class="compare-head">
+              <span class="compare-badge bad">The Old Way</span>
+              <h3>Manual Searching &amp; Dedicated VAs</h3>
+              <p class="compare-cost">$2,000 – $4,000/mo in payroll or 35+ hrs/week</p>
+            </div>
+            <ul class="compare-list">
+              <li><strong>Surface-level search:</strong> Generic keyword searches return dead channels, brand accounts, and viral outliers with zero real buyer intent.</li>
+              <li><strong>Unverified contact hunting:</strong> Grabbing the first random email on a page leads to bounces, agency spam traps, and wasted follow-ups.</li>
+              <li><strong>No memory or deduping:</strong> Teams accidentally pitch the same creator twice across YouTube and TikTok—or lose track of past rejections.</li>
+              <li><strong>Generic blast templates:</strong> Mass mail-merges get ignored or land in spam, hurting your client’s sender reputation.</li>
+            </ul>
+          </div>
+
+          <div class="compare-card after">
+            <div class="compare-head">
+              <span class="compare-badge good">The CreatorSift Way</span>
+              <h3>Automated Sourcing + Human-in-the-Loop</h3>
+              <p class="compare-cost">From $29–$79/mo · Curated batches in 15 minutes</p>
+            </div>
+            <ul class="compare-list">
+              <li><strong>Two-stage precision filtering:</strong> Hard metric gates remove inactive or off-scale channels before AI even scores content fit.</li>
+              <li><strong>Confidence-scored email engine:</strong> Every extracted address includes High/Medium/Low confidence and exact source evidence—never blind regex guesses.</li>
+              <li><strong>Cross-platform deduplication &amp; audit trail:</strong> Tracks every vetted creator, rejection reason, and suppression rule in one unified pipeline.</li>
+              <li><strong>Safe, 1-to-1 tailored outreach:</strong> AI drafts personalized pitches citing the creator’s actual videos—stored as drafts for your 1-click sign-off.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4-Stage Pipeline Deep Dive -->
+    <section id="workflow" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">How CreatorSift Works</span>
+          <h2>An End-to-End Matching Engine Built on Real Production Workflows</h2>
+          <p>
+            Born from real-world creator acquisition campaigns—not theoretical toy prompts. Every stage is engineered to maximize valid, reply-ready creator partnerships per dollar and per hour.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <div class="step-num">01</div>
+            <h3>Deep Niche Discovery</h3>
+            <p>
+              Discover creators across <strong>YouTube and TikTok</strong> using high-intent niche queries, competitor sponsor footprints, and content format signals—while caching every seen channel so you never pay twice to inspect the same creator.
+            </p>
+            <ul class="step-tags">
+              <li>YouTube &amp; TikTok</li>
+              <li>Competitor Signal Mining</li>
+              <li>Zero Duplicate Crawls</li>
+            </ul>
+          </article>
+
+          <article class="step-card">
+            <div class="step-num">02</div>
+            <h3>Hybrid Rules + AI Persona Vetting</h3>
+            <p>
+              First, deterministic rules enforce your subscriber band, 60-day recency, and median non-pinned views. Next, our AI reads actual video metadata and descriptions against your custom persona rubric—surfacing <em>Fit</em>, <em>Hold</em>, or <em>Unfit</em> with cited evidence.
+            </p>
+            <ul class="step-tags">
+              <li>Objective Metric Gates</li>
+              <li>81%+ Human Agreement</li>
+              <li>Citable Rationale</li>
+            </ul>
+          </article>
+
+          <article class="step-card">
+            <div class="step-num">03</div>
+            <h3>Confidence-Scored Contact Extraction</h3>
+            <p>
+              Stop guessing whether an email belongs to the creator. Our extractor cross-references channel bios, video descriptions, and domain blacklists to assign <strong>High / Medium / Low confidence</strong> with a traceable evidence chain.
+            </p>
+            <ul class="step-tags">
+              <li>Multi-Source Verification</li>
+              <li>Platform Blacklist Guard</li>
+              <li>Conflict Detection</li>
+            </ul>
+          </article>
+
+          <article class="step-card">
+            <div class="step-num">04</div>
+            <h3>Review Board &amp; Draft-First Outreach</h3>
+            <p>
+              Approve batches in minutes on a clean visual review board. CreatorSift generates tailored 1-to-1 outreach drafts citing specific creator videos—saved safely as drafts with daily throttling and thread sync so you never blast spam.
+            </p>
+            <ul class="step-tags">
+              <li>Batch Human Sign-Off</li>
+              <li>Draft-Only Guardrail</li>
+              <li>Reply Thread Tracking</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive ROI Calculator -->
+    <section id="roi" class="section section-alt">
+      <div class="container">
+        <div class="roi-wrapper">
+          <div class="roi-controls">
+            <span class="eyebrow">Agency &amp; Brand ROI Calculator</span>
+            <h2>See How Much Sourcing Overhead You Eliminate</h2>
+            <p>
+              Adjust your monthly client volume and target creator count to estimate manual hours and payroll saved with CreatorSift.
+            </p>
+
+            <div class="slider-group">
+              <div class="slider-label">
+                <label for="campaigns-range">Active Client Campaigns / Month</label>
+                <strong id="campaigns-val">4 campaigns</strong>
+              </div>
+              <input type="range" id="campaigns-range" min="1" max="20" value="4" />
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-label">
+                <label for="creators-range">Vetted Creators Needed / Campaign</label>
+                <strong id="creators-val">40 creators</strong>
+              </div>
+              <input type="range" id="creators-range" min="10" max="150" step="5" value="40" />
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-label">
+                <label for="rate-range">Researcher / Team Hourly Cost (USD)</label>
+                <strong id="rate-val">$25 / hr</strong>
+              </div>
+              <input type="range" id="rate-range" min="10" max="80" step="5" value="25" />
+            </div>
+          </div>
+
+          <div class="roi-results" aria-live="polite">
+            <div class="roi-stat primary">
+              <span class="roi-label">Estimated Monthly Labor Saved</span>
+              <strong class="roi-number" id="roi-dollars">$1,920</strong>
+              <span class="roi-sub" id="roi-net">Net savings after $79/mo Boutique Agency plan: $1,841/mo</span>
+            </div>
+            <div class="roi-subgrid">
+              <div class="roi-stat">
+                <span class="roi-label">Manual Hours Eliminated</span>
+                <strong class="roi-number" id="roi-hours">76.8 hrs/mo</strong>
+                <span class="roi-sub">At ~32 mins manual vetting + email lookup per matched creator</span>
+              </div>
+              <div class="roi-stat">
+                <span class="roi-label">CreatorSift Review Time</span>
+                <strong class="roi-number" id="roi-cs-hours">3.2 hrs/mo</strong>
+                <span class="roi-sub">Batch review &amp; draft approval only</span>
+              </div>
+            </div>
+            <a href="#waitlist" class="btn btn-primary btn-full">Lock Founding Pricing &amp; Reclaim Your Hours</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subscription Pricing Section -->
+    <section id="pricing" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Simple Subscription Pricing</span>
+          <h2>Fraction of a Junior Coordinator. Built to Scale With Your Roster.</h2>
+          <p>
+            Join the Founding Member Waitlist today to lock in <strong>40% off regular launch pricing for life</strong>. No credit card required now—reserve your spot and tell us your workflow needs.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="price-card">
+            <div class="price-head">
+              <h3>Solo / Brand</h3>
+              <p>For lean DTC brands, niche stores, and solo marketers sourcing creators directly.</p>
+            </div>
+            <div class="price-tag">
+              <span class="price-old">$49/mo</span>
+              <div class="price-now"><strong>$29</strong><span>/month</span></div>
+              <span class="early-pill">Founding Waitlist Rate</span>
+            </div>
+            <ul class="price-features">
+              <li>Up to 300 AI-vetted creators / month</li>
+              <li>YouTube &amp; TikTok discovery workflows</li>
+              <li>1 custom brand persona rulebook</li>
+              <li>Confidence-scored email extraction</li>
+              <li>1-to-1 personalized outreach draft generator</li>
+            </ul>
+            <a href="#waitlist" class="btn btn-secondary btn-full select-plan" data-plan="Solo / Brand ($29/mo Early Bird)">Reserve Solo Early Bird</a>
+          </div>
+
+          <div class="price-card featured">
+            <div class="popular-ribbon">Most Popular for Agencies</div>
+            <div class="price-head">
+              <h3>Boutique Agency</h3>
+              <p>For small influencer agencies &amp; freelancers matching creators across multiple client briefs.</p>
+            </div>
+            <div class="price-tag">
+              <span class="price-old">$129/mo</span>
+              <div class="price-now"><strong>$79</strong><span>/month</span></div>
+              <span class="early-pill">Founding Waitlist Rate · 40% Off</span>
+            </div>
+            <ul class="price-features">
+              <li>Up to 1,500 AI-vetted creators / month</li>
+              <li>Up to 10 separate client persona workspaces</li>
+              <li>Batch human review board &amp; exportable client shortlists</li>
+              <li>Cross-client duplicate &amp; suppression protection</li>
+              <li>Priority onboarding &amp; custom rule tuning</li>
+            </ul>
+            <a href="#waitlist" class="btn btn-primary btn-full select-plan" data-plan="Boutique Agency ($79/mo Early Bird)">Reserve Agency Early Bird</a>
+          </div>
+
+          <div class="price-card">
+            <div class="price-head">
+              <h3>Scale Agency</h3>
+              <p>For growing talent &amp; creator agencies running high-volume outbound sourcing every week.</p>
+            </div>
+            <div class="price-tag">
+              <span class="price-old">$299/mo</span>
+              <div class="price-now"><strong>$179</strong><span>/month</span></div>
+              <span class="early-pill">Founding Waitlist Rate</span>
+            </div>
+            <ul class="price-features">
+              <li>Up to 5,000 AI-vetted creators / month</li>
+              <li>Unlimited client campaigns &amp; persona profiles</li>
+              <li>Team seats &amp; shared agency review approvals</li>
+              <li>Multi-inbox draft syncing &amp; reply tracking</li>
+              <li>Dedicated migration from your existing spreadsheets</li>
+            </ul>
+            <a href="#waitlist" class="btn btn-secondary btn-full select-plan" data-plan="Scale Agency ($179/mo Early Bird)">Reserve Scale Early Bird</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Waitlist Form Section (Feishu Base Connected) -->
+    <section id="waitlist" class="section waitlist-section">
+      <div class="container waitlist-grid">
+        <div class="waitlist-pitch">
+          <span class="eyebrow light">Founding Member Waitlist</span>
+          <h2>Tell Us What Kind of Creators You Need—Get Early Access &amp; 40% Off</h2>
+          <p>
+            We are currently turning our proven internal matching engine into a public self-serve subscription SaaS.
+            Drop your email and tell us about your current sourcing workflow so we can prioritize your niche and invite you first.
+          </p>
+          <ul class="waitlist-perks">
+            <li>
+              <strong>40% Lifetime Founding Discount</strong>
+              <span>Locked-in early-bird monthly pricing when your workspace opens.</span>
+            </li>
+            <li>
+              <strong>Free Sample Shortlist Setup</strong>
+              <span>First 50 agencies on the waitlist get a custom persona rulebook configured for their top client niche.</span>
+            </li>
+            <li>
+              <strong>Direct Roadmap Influence</strong>
+              <span>Tell us which platforms, filters, or CRM exports matter most to your agency.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="waitlist-card">
+          <form id="waitlist-form" novalidate>
+            <h3>Join the Early-Access Waitlist</h3>
+            <p class="form-sub">Takes 45 seconds. Syncs directly to our onboarding queue.</p>
+
+            <!-- Honeypot field for bot filtering -->
+            <div class="hp-field" aria-hidden="true">
+              <label for="website_hp">Leave this field empty</label>
+              <input type="text" id="website_hp" name="website_hp" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="wl-email">Work Email <span class="req">*</span></label>
+                <input type="email" id="wl-email" name="email" placeholder="alex@boutiqueagency.com" required autocomplete="email" />
+              </div>
+              <div class="field">
+                <label for="wl-name">Your Name / Agency or Brand</label>
+                <input type="text" id="wl-name" name="name" placeholder="Alex Rivera · Northstar Media" autocomplete="name" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="wl-role">Who are you sourcing for?</label>
+                <select id="wl-role" name="role">
+                  <option value="Boutique / Solo Agency">Boutique or Solo Marketing Agency</option>
+                  <option value="SMB / DTC Brand">Small Business / DTC E-commerce Brand</option>
+                  <option value="Freelance Consultant">Freelance Growth / Influencer Consultant</option>
+                  <option value="SaaS / App Team">SaaS / Digital Product Team</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="wl-platforms">Primary Creator Platforms</label>
+                <select id="wl-platforms" name="platforms">
+                  <option value="Both YouTube & TikTok">Both YouTube &amp; TikTok</option>
+                  <option value="YouTube Primarily">YouTube Primarily</option>
+                  <option value="TikTok Primarily">TikTok Primarily</option>
+                  <option value="Multi-platform (incl. IG)">YouTube, TikTok &amp; Instagram</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="wl-volume">Monthly Creators Needed</label>
+                <select id="wl-volume" name="monthly_volume">
+                  <option value="Under 50 creators/mo">Under 50 creators / month</option>
+                  <option value="50 - 200 creators/mo" selected>50 – 200 creators / month</option>
+                  <option value="200 - 1,000 creators/mo">200 – 1,000 creators / month</option>
+                  <option value="1,000+ creators/mo">1,000+ creators / month</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="wl-plan">Preferred Plan</label>
+                <select id="wl-plan" name="preferred_plan">
+                  <option value="Boutique Agency ($79/mo Early Bird)">Boutique Agency ($79/mo Early Bird)</option>
+                  <option value="Solo / Brand ($29/mo Early Bird)">Solo / Brand ($29/mo Early Bird)</option>
+                  <option value="Scale Agency ($179/mo Early Bird)">Scale Agency ($179/mo Early Bird)</option>
+                  <option value="Not sure yet">Not sure yet — tell me when live</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="wl-needs">What are your current creator matching needs &amp; biggest bottleneck? <span class="req">*</span></label>
+              <textarea id="wl-needs" name="needs" rows="4" required placeholder="Example: We match home-decor &amp; craft YouTubers (10K–150K subs) for 3 DTC clients. Right now our VA spends 20 hrs/week checking recent view averages and digging for valid emails."></textarea>
+            </div>
+
+            <div id="form-feedback" class="form-feedback" role="status" aria-live="polite" hidden></div>
+
+            <button type="submit" id="wl-submit" class="btn btn-primary btn-lg btn-full">
+              Join Founding Waitlist
+            </button>
+            <p class="form-footnote">No spam, ever. We only email you about early access and your requested creator workflow.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Long-form SEO Guide & FAQ -->
+    <section id="faq" class="section">
+      <div class="container faq-layout">
+        <article class="seo-editorial">
+          <span class="eyebrow">Influencer Agency Playbook</span>
+          <h2>How Small Agencies Compete Without Large Sourcing Teams</h2>
+          <p>
+            Enterprise influencer marketplaces charge $10,000+ per year and still leave agencies sifting through stale, unvetted creator directories. On the other extreme, hiring dedicated sourcers to manually search YouTube and TikTok destroys agency margins on retainer clients.
+          </p>
+          <p>
+            CreatorSift bridges that gap with a <strong>deterministic-first, AI-assisted sourcing architecture</strong>. By filtering out inactive channels, mismatched view medians, and non-creator brand accounts automatically before AI evaluates content fit, small teams get clean, defensible creator shortlists—complete with verifiable contact evidence and personalized outreach drafts ready for human sign-off.
+          </p>
+        </article>
+
+        <div class="faq-list">
+          <h3>Frequently Asked Questions</h3>
+          <details open>
+            <summary>How is CreatorSift different from generic influencer databases?</summary>
+            <p>Static creator databases rely on outdated scrapes and vanity follower counts. CreatorSift runs fresh discovery per brief, checks recent non-pinned video medians, evaluates actual video context with AI against your client persona, and verifies contact confidence with source evidence.</p>
+          </details>
+          <details>
+            <summary>Can I use CreatorSift for multiple clients as a solo agency?</summary>
+            <p>Yes. Boutique Agency and Scale Agency tiers separate persona rules, candidate pools, and outreach suppression lists by client workspace—while still protecting against duplicate outreach across platforms.</p>
+          </details>
+          <details>
+            <summary>Why do you keep a human-in-the-loop review step?</summary>
+            <p>Full auto-send bots ruin domain reputation and send embarrassing pitches to mismatched creators. CreatorSift automates the 90% tedious work (discovery, metric gating, AI scoring, email verification, and draft writing) while giving you a fast batch sign-off board before anything is sent.</p>
+          </details>
+          <details>
+            <summary>What happens after I join the waitlist?</summary>
+            <p>Your email and workflow requirements go straight into our onboarding queue. As we open beta cohorts for each niche, we will invite Founding Waitlist members in order with your locked 40% early-bird discount.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true">CS</span>
+        <div>
+          <strong>CreatorSift</strong>
+          <p>AI Influencer Discovery, Matching &amp; Verified Outreach for Boutique Agencies &amp; SMBs.</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="#comparison">Why CreatorSift</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#waitlist">Join Waitlist</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

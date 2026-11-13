@@ -1,0 +1,16 @@
+name = "creatorsift"
+pages_build_output_dir = "."
+compatibility_date = "2026-01-01"
+
+# Configure secret environment variables in Cloudflare Pages Dashboard -> Settings -> Environment Variables:
+# Mode A (Recommended - Feishu Base Automation Webhook):
+#   FEISHU_WEBHOOK_URL = "https://www.feishu.cn/flow/api/trigger-webhook/..."
+#
+# Mode B (Optional - Feishu Open Platform Bitable API):
+#   FEISHU_APP_ID = "..."
+#   FEISHU_APP_SECRET = "..."
+#   FEISHU_APP_TOKEN = "..."
+#   FEISHU_TABLE_ID = "..."
+#
+# Optional CORS restriction (defaults to "*" so GitHub Pages mirror can submit):
+#   ALLOWED_ORIGIN = "*"

@@ -67,6 +67,14 @@ for (const price of ["$29", "$79", "$179"]) {
   assert.ok(html.includes(price), `Missing pricing tier ${price}`);
 }
 
+for (const token of ["MCP", "REST API", "Human-in-the-Loop", "Web SaaS Workbench"]) {
+  assert.ok(html.includes(token), `Missing Agent-native positioning token "${token}" in index.html`);
+}
+assert.ok(
+  JSON.stringify(ldJson).includes("Model Context Protocol (MCP)"),
+  "Missing MCP positioning in JSON-LD structured data"
+);
+
 const feishuFormUrl = "https://my.feishu.cn/share/base/shrcnoUmhzE1rCBTRPEELe0YQ9f";
 assert.ok(html.includes(feishuFormUrl), "Missing Feishu Form Collection URL in index.html");
 assert.ok(html.includes('id="feishu-waitlist-iframe"'), "Missing Feishu iframe embed in index.html");

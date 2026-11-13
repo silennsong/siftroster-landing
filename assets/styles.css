@@ -317,6 +317,45 @@ h1 {
   white-space: nowrap;
 }
 
+.agent-cmd-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(10, 15, 28, 0.85);
+  border-bottom: 1px solid var(--border);
+}
+
+.agent-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(56, 189, 248, 0.16);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #7dd3fc;
+  white-space: nowrap;
+}
+
+.agent-prompt {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: #e2e8f0;
+  flex: 1 1 240px;
+  line-height: 1.4;
+}
+
+.agent-status {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #6ee7b7;
+  white-space: nowrap;
+}
+
 .preview-tabs {
   display: flex;
   gap: 8px;

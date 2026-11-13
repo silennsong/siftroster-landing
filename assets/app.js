@@ -117,6 +117,12 @@ window.SIFTROSTER_CONFIG = window.SIFTROSTER_CONFIG || {
     ]
   };
 
+  const AGENT_PROMPTS = {
+    pod: '"Find 40 active YouTube & TikTok POD creators (>10K median views), score persona fit & stage 1-to-1 drafts"',
+    saas: '"Run SaaS workflow creator discovery via MCP, filter Shorts-only noise & queue High-confidence emails for approval"',
+    home: '"Source 30 home & craft creators with active sponsor history, exclude 60+ day inactive channels & prep human review batch"'
+  };
+
   function escapeHtml(text) {
     return String(text)
       .replace(/&/g, "&amp;")
@@ -128,6 +134,10 @@ window.SIFTROSTER_CONFIG = window.SIFTROSTER_CONFIG || {
 
   function renderPreview(key) {
     const container = document.getElementById("preview-cards");
+    const cmdText = document.getElementById("agent-cmd-text");
+    if (cmdText && AGENT_PROMPTS[key]) {
+      cmdText.textContent = AGENT_PROMPTS[key];
+    }
     if (!container || !SAMPLES[key]) return;
 
     container.innerHTML = SAMPLES[key]

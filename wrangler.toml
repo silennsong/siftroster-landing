@@ -1,18 +1,5 @@
-name = "siftroster"
-pages_build_output_dir = "."
+name = "siftroster-landing"
 compatibility_date = "2026-01-01"
 
-# Configure secret environment variables in Cloudflare Pages Dashboard -> Settings -> Environment Variables:
-#
-# Mode A (Recommended - Feishu Base Automation Webhook):
-#   FEISHU_WEBHOOK_URL = "https://www.feishu.cn/flow/api/trigger-webhook/..."
-#   (Open https://my.feishu.cn/base/WqcBbVlMga6qoTsn8RGc81p6nbe -> Automation -> When Webhook Received)
-#
-# Mode B (Alternative - Feishu Open Platform Bitable API):
-#   FEISHU_APP_ID = "cli_aa5b68abbab8dce2"
-#   FEISHU_APP_SECRET = "<your_app_secret>"
-#   FEISHU_APP_TOKEN = "WqcBbVlMga6qoTsn8RGc81p6nbe"
-#   FEISHU_TABLE_ID = "tbliP1HDXKqEcU5F"
-#
-# Optional CORS restriction (defaults to "*" so GitHub Pages mirror can submit):
-#   ALLOWED_ORIGIN = "*"
+[assets]
+directory = "."

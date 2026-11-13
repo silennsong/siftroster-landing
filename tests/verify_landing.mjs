@@ -81,7 +81,13 @@ assert.ok(html.includes('id="feishu-waitlist-iframe"'), "Missing Feishu iframe e
 const appJs = fs.readFileSync(path.join(rootDir, "assets/app.js"), "utf8");
 assert.ok(appJs.includes(feishuFormUrl), "Missing Feishu Form Collection URL in assets/app.js");
 
-console.log("PASS: SEO metadata, JSON-LD schema, pricing tiers, and Feishu Form embed verified");
+const wranglerToml = fs.readFileSync(path.join(rootDir, "wrangler.toml"), "utf8");
+assert.ok(wranglerToml.includes('name = "siftroster-landing"'), "wrangler.toml must match Cloudflare project name siftroster-landing");
+assert.ok(wranglerToml.includes("[assets]") && wranglerToml.includes('directory = "."'), "wrangler.toml must configure Workers [assets] directory");
+assert.equal(wranglerToml.includes("pages_build_output_dir"), false, "wrangler.toml must not use pages_build_output_dir for Workers deploy");
+assert.ok(fs.existsSync(path.join(rootDir, ".assetsignore")), ".assetsignore is required for Workers Static Assets");
+
+console.log("PASS: SEO metadata, JSON-LD schema, pricing tiers, Cloudflare config, and Feishu Form embed verified");
 
 // 3. Waitlist Cloudflare Function unit tests
 const originalFetch = globalThis.fetch;

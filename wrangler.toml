@@ -1,5 +1,3 @@
-name = "siftroster-landing"
+name = "siftroster"
+pages_build_output_dir = "."
 compatibility_date = "2026-01-01"
-
-[assets]
-directory = "."

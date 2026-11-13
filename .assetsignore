@@ -6,4 +6,5 @@ functions
 tests
 wrangler.toml
 publish_github.ps1
+sync_cloudflare_pages.ps1
 DEPLOYMENT_AND_FEISHU_GUIDE.md

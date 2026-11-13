@@ -82,10 +82,10 @@ const appJs = fs.readFileSync(path.join(rootDir, "assets/app.js"), "utf8");
 assert.ok(appJs.includes(feishuFormUrl), "Missing Feishu Form Collection URL in assets/app.js");
 
 const wranglerToml = fs.readFileSync(path.join(rootDir, "wrangler.toml"), "utf8");
-assert.ok(wranglerToml.includes('name = "siftroster-landing"'), "wrangler.toml must match Cloudflare project name siftroster-landing");
-assert.ok(wranglerToml.includes("[assets]") && wranglerToml.includes('directory = "."'), "wrangler.toml must configure Workers [assets] directory");
-assert.equal(wranglerToml.includes("pages_build_output_dir"), false, "wrangler.toml must not use pages_build_output_dir for Workers deploy");
-assert.ok(fs.existsSync(path.join(rootDir, ".assetsignore")), ".assetsignore is required for Workers Static Assets");
+assert.ok(wranglerToml.includes('name = "siftroster"'), "wrangler.toml must match Cloudflare Pages project name siftroster");
+assert.ok(wranglerToml.includes('pages_build_output_dir = "."'), "wrangler.toml must configure Cloudflare Pages output dir");
+assert.ok(fs.existsSync(path.join(rootDir, ".assetsignore")), ".assetsignore must exist");
+assert.ok(fs.existsSync(path.join(rootDir, "sync_cloudflare_pages.ps1")), "sync_cloudflare_pages.ps1 must exist");
 
 console.log("PASS: SEO metadata, JSON-LD schema, pricing tiers, Cloudflare config, and Feishu Form embed verified");
 

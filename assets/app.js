@@ -1,13 +1,13 @@
 /**
- * CreatorSift Landing Page Configuration
+ * SiftRoster Landing Page Configuration
  *
  * When deployed on Cloudflare Pages, `/api/waitlist` works automatically.
  * When deployed on GitHub Pages (static hosting), set `apiEndpoint` below
  * to your deployed Cloudflare Pages URL, e.g.:
- *   "https://creatorsift.pages.dev/api/waitlist"
+ *   "https://siftroster.pages.dev/api/waitlist"
  * so both GitHub Pages and Cloudflare Pages write into the exact same Feishu Base table.
  */
-window.CREATORSIFT_CONFIG = window.CREATORSIFT_CONFIG || {
+window.SIFTROSTER_CONFIG = window.SIFTROSTER_CONFIG || {
   apiEndpoint: "/api/waitlist"
 };
 
@@ -195,7 +195,7 @@ window.CREATORSIFT_CONFIG = window.CREATORSIFT_CONFIG || {
       const rate = Number(rateEl.value);
 
       const totalMatched = campaigns * creators;
-      // ~32 minutes manual research/vetting/email hunting per matched creator vs ~1.2 min human review in CreatorSift
+      // ~32 minutes manual research/vetting/email hunting per matched creator vs ~1.2 min human review in SiftRoster
       const manualHours = (totalMatched * 32) / 60;
       const csHours = (totalMatched * 1.2) / 60;
       const savedHours = Math.max(0, manualHours - csHours);
@@ -234,7 +234,7 @@ window.CREATORSIFT_CONFIG = window.CREATORSIFT_CONFIG || {
   }
 
   function resolveApiEndpoint() {
-    const configured = (window.CREATORSIFT_CONFIG && window.CREATORSIFT_CONFIG.apiEndpoint) || "/api/waitlist";
+    const configured = (window.SIFTROSTER_CONFIG && window.SIFTROSTER_CONFIG.apiEndpoint) || "/api/waitlist";
     return configured.trim();
   }
 
@@ -317,7 +317,7 @@ window.CREATORSIFT_CONFIG = window.CREATORSIFT_CONFIG || {
         if (isStaticNoBackend) {
           showFeedback(
             "error",
-            "Waitlist API endpoint is not linked yet on this GitHub Pages mirror. Set CREATORSIFT_CONFIG.apiEndpoint in assets/app.js to your Cloudflare Pages /api/waitlist URL."
+            "Waitlist API endpoint is not linked yet on this GitHub Pages mirror. Set SIFTROSTER_CONFIG.apiEndpoint in assets/app.js to your Cloudflare Pages /api/waitlist URL."
           );
         } else {
           showFeedback(

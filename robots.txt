@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Update the Sitemap URL to your live domain (Cloudflare Pages or custom domain)
-Sitemap: https://creatorsift.pages.dev/sitemap.xml
+Sitemap: https://siftroster.pages.dev/sitemap.xml

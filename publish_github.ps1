@@ -1,11 +1,11 @@
 <#
 .SYNOPSIS
-Creates a standalone public GitHub repository for the CreatorSift SEO landing page
+Creates a standalone public GitHub repository for the SiftRoster SEO landing page
 and enables GitHub Pages via GitHub Actions.
-Only run inside C:\Users\16358\Downloads\vibe vibe\creatorsift-landing.
+Only run inside C:\Users\16358\Downloads\vibe vibe\siftroster-landing.
 #>
 param(
-  [string]$RepoName = "creatorsift-landing",
+  [string]$RepoName = "siftroster-landing",
   [ValidateSet("public", "private")]
   [string]$Visibility = "public"
 )

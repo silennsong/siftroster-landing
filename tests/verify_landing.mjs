@@ -21,13 +21,14 @@ function walkFiles(dir) {
   return out;
 }
 
-// 1. De-identification & sensitive-term scan
+// 1. De-identification, sensitive-term, and old-brand-name scan
 const forbiddenTerms = [
   "print" + "kk",
   "api_" + "key.txt",
   "candi" + "dates.csv",
   "outreach_" + "db.py",
-  "persona_" + "rules_v"
+  "persona_" + "rules_v",
+  "creator" + "sift"
 ];
 const files = walkFiles(rootDir);
 assert.ok(files.length >= 10, "Expected landing page files to exist");
@@ -38,15 +39,15 @@ for (const file of files) {
     assert.equal(
       content.includes(term),
       false,
-      `Forbidden internal term "${term}" found in ${path.relative(rootDir, file)}`
+      `Forbidden term "${term}" found in ${path.relative(rootDir, file)}`
     );
   }
 }
-console.log("PASS: De-identification & internal reference scan (0 leaks)");
+console.log("PASS: De-identification & old-brand scan (0 leaks)");
 
 // 2. SEO & HTML integrity check
 const html = fs.readFileSync(path.join(rootDir, "index.html"), "utf8");
-assert.match(html, /<title>CreatorSift[\s\S]*?<\/title>/);
+assert.match(html, /<title>SiftRoster[\s\S]*?<\/title>/);
 assert.match(html, /<meta name="description" content="[^"]{50,}"/);
 assert.match(html, /<meta property="og:title" content="[^"]+"/);
 assert.match(html, /<meta name="twitter:card" content="summary_large_image"/);
@@ -86,7 +87,7 @@ const originalFetch = globalThis.fetch;
 try {
   // 3a. CORS OPTIONS
   {
-    const req = new Request("https://creatorsift.pages.dev/api/waitlist", {
+    const req = new Request("https://siftroster.pages.dev/api/waitlist", {
       method: "OPTIONS",
       headers: { Origin: "https://silennsong.github.io" }
     });
@@ -98,7 +99,7 @@ try {
 
   // 3b. Invalid email -> 400
   {
-    const req = new Request("https://creatorsift.pages.dev/api/waitlist", {
+    const req = new Request("https://siftroster.pages.dev/api/waitlist", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: "not-an-email", needs: "Need YouTube creators" })
@@ -111,7 +112,7 @@ try {
 
   // 3c. Short needs -> 400
   {
-    const req = new Request("https://creatorsift.pages.dev/api/waitlist", {
+    const req = new Request("https://siftroster.pages.dev/api/waitlist", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: "alex@agency.com", needs: "hi" })
@@ -127,7 +128,7 @@ try {
       fetchCalled = true;
       return new Response("{}");
     };
-    const req = new Request("https://creatorsift.pages.dev/api/waitlist", {
+    const req = new Request("https://siftroster.pages.dev/api/waitlist", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: "bot@spam.com", needs: "spam message", website_hp: "http://spam.link" })
@@ -139,7 +140,7 @@ try {
 
   // 3e. Unconfigured env -> 503
   {
-    const req = new Request("https://creatorsift.pages.dev/api/waitlist", {
+    const req = new Request("https://siftroster.pages.dev/api/waitlist", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: "alex@agency.com", needs: "Looking for 50 craft YouTubers per month." })
@@ -157,7 +158,7 @@ try {
       capturedPayload = JSON.parse(init.body);
       return new Response(JSON.stringify({ code: 0, msg: "success" }), { status: 200 });
     };
-    const req = new Request("https://creatorsift.pages.dev/api/waitlist", {
+    const req = new Request("https://siftroster.pages.dev/api/waitlist", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -168,7 +169,7 @@ try {
         monthly_volume: "50 - 200 creators/mo",
         preferred_plan: "Boutique Agency ($79/mo Early Bird)",
         needs: "Sourcing home-decor YouTubers for 3 DTC clients.",
-        source_url: "https://silennsong.github.io/creatorsift-landing/"
+        source_url: "https://silennsong.github.io/siftroster-landing/"
       })
     });
     const res = await onRequestPost({
@@ -181,7 +182,7 @@ try {
     assert.equal(capturedUrl, "https://www.feishu.cn/flow/api/trigger-webhook/test123");
     assert.equal(capturedPayload.email, "alex@agency.com");
     assert.equal(capturedPayload.preferred_plan, "Boutique Agency ($79/mo Early Bird)");
-    assert.equal(capturedPayload.source_url, "https://silennsong.github.io/creatorsift-landing/");
+    assert.equal(capturedPayload.source_url, "https://silennsong.github.io/siftroster-landing/");
   }
 
   // 3g. Mode B: Feishu Open API Bitable insert -> 200
@@ -194,7 +195,7 @@ try {
       }
       return new Response(JSON.stringify({ code: 0, data: { record: { record_id: "rec123" } } }), { status: 200 });
     };
-    const req = new Request("https://creatorsift.pages.dev/api/waitlist", {
+    const req = new Request("https://siftroster.pages.dev/api/waitlist", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

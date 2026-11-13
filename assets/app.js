@@ -1,13 +1,11 @@
 /**
  * SiftRoster Landing Page Configuration
  *
- * When deployed on Cloudflare Pages, `/api/waitlist` works automatically.
- * When deployed on GitHub Pages (static hosting), set `apiEndpoint` below
- * to your deployed Cloudflare Pages URL, e.g.:
- *   "https://siftroster.pages.dev/api/waitlist"
- * so both GitHub Pages and Cloudflare Pages write into the exact same Feishu Base table.
+ * Waitlist submissions go directly to the public Feishu Base Form Collection Page,
+ * so both GitHub Pages and Cloudflare Pages work identically with zero backend config.
  */
 window.SIFTROSTER_CONFIG = window.SIFTROSTER_CONFIG || {
+  feishuFormUrl: "https://my.feishu.cn/share/base/shrcnoUmhzE1rCBTRPEELe0YQ9f",
   apiEndpoint: "/api/waitlist"
 };
 
@@ -219,123 +217,39 @@ window.SIFTROSTER_CONFIG = window.SIFTROSTER_CONFIG || {
   }
 
   function initPlanSelection() {
-    const planSelect = document.getElementById("wl-plan");
+    const banner = document.getElementById("selected-plan-banner");
     const buttons = document.querySelectorAll(".select-plan");
-    if (!planSelect || !buttons.length) return;
+    if (!banner || !buttons.length) return;
 
     buttons.forEach((btn) => {
       btn.addEventListener("click", () => {
         const chosen = btn.dataset.plan;
         if (chosen) {
-          planSelect.value = chosen;
+          banner.hidden = false;
+          banner.textContent = `Selected plan: ${chosen} — pick this option in the "Preferred Founding Member Plan" question below.`;
         }
       });
     });
   }
 
-  function resolveApiEndpoint() {
-    const configured = (window.SIFTROSTER_CONFIG && window.SIFTROSTER_CONFIG.apiEndpoint) || "/api/waitlist";
-    return configured.trim();
-  }
-
-  function initWaitlistForm() {
-    const form = document.getElementById("waitlist-form");
-    const feedback = document.getElementById("form-feedback");
-    const submitBtn = document.getElementById("wl-submit");
-    if (!form || !feedback || !submitBtn) return;
-
-    function showFeedback(type, message) {
-      feedback.hidden = false;
-      feedback.className = `form-feedback ${type}`;
-      feedback.textContent = message;
+  function initFeishuForm() {
+    const url =
+      (window.SIFTROSTER_CONFIG && window.SIFTROSTER_CONFIG.feishuFormUrl) ||
+      "https://my.feishu.cn/share/base/shrcnoUmhzE1rCBTRPEELe0YQ9f";
+    const iframe = document.getElementById("feishu-waitlist-iframe");
+    const openBtn = document.getElementById("feishu-open-btn");
+    if (iframe && iframe.src !== url) {
+      iframe.src = url;
     }
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      feedback.hidden = true;
-
-      const formData = new FormData(form);
-      const email = String(formData.get("email") || "").trim();
-      const needs = String(formData.get("needs") || "").trim();
-
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        showFeedback("error", "Please enter a valid work email address.");
-        document.getElementById("wl-email").focus();
-        return;
-      }
-
-      if (needs.length < 8) {
-        showFeedback("error", "Please share a quick note on your creator niche or current bottleneck.");
-        document.getElementById("wl-needs").focus();
-        return;
-      }
-
-      const payload = {
-        email,
-        name: String(formData.get("name") || "").trim(),
-        role: String(formData.get("role") || "").trim(),
-        platforms: String(formData.get("platforms") || "").trim(),
-        monthly_volume: String(formData.get("monthly_volume") || "").trim(),
-        preferred_plan: String(formData.get("preferred_plan") || "").trim(),
-        needs,
-        website_hp: String(formData.get("website_hp") || "").trim(),
-        source_url: window.location.href,
-        submitted_at: new Date().toISOString()
-      };
-
-      const endpoint = resolveApiEndpoint();
-      const origLabel = submitBtn.textContent;
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Submitting...";
-
-      try {
-        const response = await fetch(endpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-        });
-
-        let data = {};
-        try {
-          data = await response.json();
-        } catch (_) {
-          data = {};
-        }
-
-        if (!response.ok || data.ok === false) {
-          throw new Error(data.error || `Request failed (${response.status})`);
-        }
-
-        form.reset();
-        showFeedback(
-          "success",
-          data.message || "You're on the Founding Member Waitlist! We've logged your workflow needs and reserved your 40% early-bird rate."
-        );
-      } catch (err) {
-        const isStaticNoBackend =
-          window.location.hostname.endsWith("github.io") && endpoint.startsWith("/");
-        if (isStaticNoBackend) {
-          showFeedback(
-            "error",
-            "Waitlist API endpoint is not linked yet on this GitHub Pages mirror. Set SIFTROSTER_CONFIG.apiEndpoint in assets/app.js to your Cloudflare Pages /api/waitlist URL."
-          );
-        } else {
-          showFeedback(
-            "error",
-            err.message || "Unable to submit right now. Please try again in a moment."
-          );
-        }
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = origLabel;
-      }
-    });
+    if (openBtn && openBtn.href !== url) {
+      openBtn.href = url;
+    }
   }
 
   document.addEventListener("DOMContentLoaded", () => {
     initPreviewTabs();
     initRoiCalculator();
     initPlanSelection();
-    initWaitlistForm();
+    initFeishuForm();
   });
 })();

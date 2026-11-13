@@ -865,8 +865,17 @@ input[type="range"] {
   background: var(--surface);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-lg);
-  padding: 30px;
+  padding: 26px;
   box-shadow: var(--shadow-lg);
+}
+
+.waitlist-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
 .waitlist-card h3 {
@@ -875,9 +884,56 @@ input[type="range"] {
 }
 
 .form-sub {
-  margin: 0 0 22px;
+  margin: 0;
   color: var(--text-muted);
   font-size: 0.9rem;
+}
+
+.plan-hint {
+  margin-bottom: 14px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(16, 185, 129, 0.14);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #a7f3d0;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.feishu-frame-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  background: #ffffff;
+}
+
+.feishu-iframe {
+  display: block;
+  width: 100%;
+  height: 680px;
+  border: 0;
+}
+
+.waitlist-fallback-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.waitlist-fallback-bar a {
+  color: #6ee7b7;
+  font-weight: 600;
+}
+
+.waitlist-fallback-bar a:hover {
+  text-decoration: underline;
 }
 
 .hp-field {

@@ -510,83 +510,43 @@
           </ul>
         </div>
 
-        <div class="waitlist-card">
-          <form id="waitlist-form" novalidate>
-            <h3>Join the Early-Access Waitlist</h3>
-            <p class="form-sub">Takes 45 seconds. Syncs directly to our onboarding queue.</p>
-
-            <!-- Honeypot field for bot filtering -->
-            <div class="hp-field" aria-hidden="true">
-              <label for="website_hp">Leave this field empty</label>
-              <input type="text" id="website_hp" name="website_hp" tabindex="-1" autocomplete="off" />
+        <div class="waitlist-card" id="waitlist-card">
+          <div class="waitlist-card-head">
+            <div>
+              <h3>Join the Early-Access Waitlist</h3>
+              <p class="form-sub">Takes 45 seconds. Submits directly to our onboarding queue.</p>
             </div>
+            <a
+              id="feishu-open-btn"
+              class="btn btn-primary btn-sm"
+              href="https://my.feishu.cn/share/base/shrcnoUmhzE1rCBTRPEELe0YQ9f"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Open Full Form &#8599;</a>
+          </div>
 
-            <div class="form-row">
-              <div class="field">
-                <label for="wl-email">Work Email <span class="req">*</span></label>
-                <input type="email" id="wl-email" name="email" placeholder="alex@boutiqueagency.com" required autocomplete="email" />
-              </div>
-              <div class="field">
-                <label for="wl-name">Your Name / Agency or Brand</label>
-                <input type="text" id="wl-name" name="name" placeholder="Alex Rivera · Northstar Media" autocomplete="name" />
-              </div>
-            </div>
+          <div id="selected-plan-banner" class="plan-hint" hidden></div>
 
-            <div class="form-row">
-              <div class="field">
-                <label for="wl-role">Who are you sourcing for?</label>
-                <select id="wl-role" name="role">
-                  <option value="Boutique / Solo Agency">Boutique or Solo Marketing Agency</option>
-                  <option value="SMB / DTC Brand">Small Business / DTC E-commerce Brand</option>
-                  <option value="Freelance Consultant">Freelance Growth / Influencer Consultant</option>
-                  <option value="SaaS / App Team">SaaS / Digital Product Team</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="wl-platforms">Primary Creator Platforms</label>
-                <select id="wl-platforms" name="platforms">
-                  <option value="Both YouTube & TikTok">Both YouTube &amp; TikTok</option>
-                  <option value="YouTube Primarily">YouTube Primarily</option>
-                  <option value="TikTok Primarily">TikTok Primarily</option>
-                  <option value="Multi-platform (incl. IG)">YouTube, TikTok &amp; Instagram</option>
-                </select>
-              </div>
-            </div>
+          <div class="feishu-frame-wrap">
+            <iframe
+              id="feishu-waitlist-iframe"
+              class="feishu-iframe"
+              src="https://my.feishu.cn/share/base/shrcnoUmhzE1rCBTRPEELe0YQ9f"
+              title="SiftRoster Founding Member Waitlist Form"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
 
-            <div class="form-row">
-              <div class="field">
-                <label for="wl-volume">Monthly Creators Needed</label>
-                <select id="wl-volume" name="monthly_volume">
-                  <option value="Under 50 creators/mo">Under 50 creators / month</option>
-                  <option value="50 - 200 creators/mo" selected>50 – 200 creators / month</option>
-                  <option value="200 - 1,000 creators/mo">200 – 1,000 creators / month</option>
-                  <option value="1,000+ creators/mo">1,000+ creators / month</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="wl-plan">Preferred Plan</label>
-                <select id="wl-plan" name="preferred_plan">
-                  <option value="Boutique Agency ($79/mo Early Bird)">Boutique Agency ($79/mo Early Bird)</option>
-                  <option value="Solo / Brand ($29/mo Early Bird)">Solo / Brand ($29/mo Early Bird)</option>
-                  <option value="Scale Agency ($179/mo Early Bird)">Scale Agency ($179/mo Early Bird)</option>
-                  <option value="Not sure yet">Not sure yet — tell me when live</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="field">
-              <label for="wl-needs">What are your current creator matching needs &amp; biggest bottleneck? <span class="req">*</span></label>
-              <textarea id="wl-needs" name="needs" rows="4" required placeholder="Example: We match home-decor &amp; craft YouTubers (10K–150K subs) for 3 DTC clients. Right now our VA spends 20 hrs/week checking recent view averages and digging for valid emails."></textarea>
-            </div>
-
-            <div id="form-feedback" class="form-feedback" role="status" aria-live="polite" hidden></div>
-
-            <button type="submit" id="wl-submit" class="btn btn-primary btn-lg btn-full">
-              Join Founding Waitlist
-            </button>
-            <p class="form-footnote">No spam, ever. We only email you about early access and your requested creator workflow.</p>
-          </form>
+          <div class="waitlist-fallback-bar">
+            <span>Form not loading inside your browser?</span>
+            <a
+              href="https://my.feishu.cn/share/base/shrcnoUmhzE1rCBTRPEELe0YQ9f"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Open Official Waitlist Page Directly &#8599;</a>
+          </div>
+          <p class="form-footnote">No spam, ever. We only email you about early access and your requested creator workflow.</p>
         </div>
       </div>
     </section>

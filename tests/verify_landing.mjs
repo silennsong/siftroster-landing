@@ -67,19 +67,13 @@ for (const price of ["$29", "$79", "$179"]) {
   assert.ok(html.includes(price), `Missing pricing tier ${price}`);
 }
 
-for (const fieldName of [
-  'name="email"',
-  'name="name"',
-  'name="role"',
-  'name="platforms"',
-  'name="monthly_volume"',
-  'name="preferred_plan"',
-  'name="needs"',
-  'name="website_hp"'
-]) {
-  assert.ok(html.includes(fieldName), `Missing waitlist form field ${fieldName}`);
-}
-console.log("PASS: SEO metadata, JSON-LD schema, pricing tiers, and form fields verified");
+const feishuFormUrl = "https://my.feishu.cn/share/base/shrcnoUmhzE1rCBTRPEELe0YQ9f";
+assert.ok(html.includes(feishuFormUrl), "Missing Feishu Form Collection URL in index.html");
+assert.ok(html.includes('id="feishu-waitlist-iframe"'), "Missing Feishu iframe embed in index.html");
+const appJs = fs.readFileSync(path.join(rootDir, "assets/app.js"), "utf8");
+assert.ok(appJs.includes(feishuFormUrl), "Missing Feishu Form Collection URL in assets/app.js");
+
+console.log("PASS: SEO metadata, JSON-LD schema, pricing tiers, and Feishu Form embed verified");
 
 // 3. Waitlist Cloudflare Function unit tests
 const originalFetch = globalThis.fetch;
